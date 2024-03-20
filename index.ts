@@ -1,7 +1,8 @@
 import convert from "convert-units"
 
 export const mm = (n: number | string): number => {
-  const unit = typeof n === "number" ? "mm" : n.replace(/^[^a-zA-Z]+/g, "")
+  let unit = typeof n === "number" ? "mm" : n.replace(/^[^a-zA-Z]+/g, "")
+  if (!unit) unit = "mm"
   const val = typeof n === "number" ? n : parseFloat(n.split(unit)[0])
   return convert(val)
     .from(unit as convert.Unit)
