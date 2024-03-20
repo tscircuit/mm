@@ -1,9 +1,12 @@
 import { test, expect } from "bun:test"
-import mm from ".."
+import mm from "../index.ts"
 
-test("inches", () => {
+test("1in", () => {
   expect(mm("1in")).toBeCloseTo(25.4)
 })
-test("mm", () => {
+test("10mm", () => {
   expect(mm("10mm")).toBeCloseTo(10)
+})
+test("0.54mm", () => {
+  expect(mm("0.54mm")).toBeCloseTo(0.54)
 })
