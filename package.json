@@ -1,14 +1,17 @@
 {
   "name": "@tscircuit/mm",
-  "version": "0.0.5",
-  "main": "dist/index.js",
+  "version": "0.0.6",
+  "main": "dist/index.cjs",
   "type": "module",
   "scripts": {
-    "build": "bun build index.ts --target=node --outfile ./dist/index.js"
+    "build": "tsup index.ts --dts --sourcemap",
+    "build:bun": "bun build index.ts --target=node --outfile ./dist/index.js"
   },
   "devDependencies": {
     "@types/bun": "latest",
-    "@types/convert-units": "^2.3.9"
+    "@types/convert-units": "^2.3.9",
+    "esbuild": "^0.20.2",
+    "tsup": "^8.0.2"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
