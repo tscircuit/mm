@@ -13,3 +13,6 @@ test("0.54mm", () => {
 test("0.8mm", () => {
   expect(mm("0.54mm")).toBeCloseTo(0.54)
 })
+test("100mil", () => {
+  expect(mm("100mil")).toBeCloseTo(2.54)
+})

@@ -1,9 +1,10 @@
 {
   "name": "@tscircuit/mm",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "dist/index.cjs",
   "type": "module",
   "scripts": {
+    "test": "bun test",
     "build": "tsup index.ts --dts --sourcemap",
     "build:bun": "bun build index.ts --target=node --outfile ./dist/index.js"
   },
