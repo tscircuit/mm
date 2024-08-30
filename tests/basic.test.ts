@@ -1,4 +1,4 @@
-import { test, expect } from "bun:test"
+import { expect, test } from "bun:test"
 import mm from "../index.ts"
 
 test("1in", () => {
