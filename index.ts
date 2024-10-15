@@ -25,4 +25,10 @@ export const mmStr = (n: number | string): string => {
   return `${mm(n)}mm`
 }
 
+export const mil2mm = (mil: number | string) => {
+  if (typeof mil === "number") return mm(`${mil}mil`)
+  if (mil.match(/^\d+$/)) return mm(`${mil}mil`)
+  return mm(mil)
+}
+
 export default mm
