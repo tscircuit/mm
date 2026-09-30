@@ -28,7 +28,9 @@ export const mm = (n: number | string): number => {
 }
 
 export const mmStr = (n: number | string): string => {
-  return `${mmNumberFormatter.format(mm(n))}mm`
+  const formattedMillimeters = mmNumberFormatter.format(mm(n))
+
+  return `${formattedMillimeters === "-0" ? "0" : formattedMillimeters}mm`
 }
 
 export const mil2mm = (mil: number | string) => {
