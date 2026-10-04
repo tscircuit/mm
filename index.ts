@@ -32,8 +32,16 @@ export const mmStr = (n: number | string): string => {
 }
 
 export const mil2mm = (mil: number | string) => {
-  if (typeof mil === "number") return mm(`${mil}mil`)
-  if (mil.match(/^\d+$/)) return mm(`${mil}mil`)
+  if (
+    typeof mil === "number" ||
+    /^[+-]?(?:\d+\.?\d*|\.\d+)(?:e[+-]?\d+)?$/i.test(mil.trim())
+  ) {
+    const numericMil = Number(mil)
+    if (!Number.isFinite(numericMil)) {
+      throw new Error(`Invalid mil value: ${mil}`)
+    }
+    return numericMil * unitToMm.mil
+  }
   return mm(mil)
 }
 
