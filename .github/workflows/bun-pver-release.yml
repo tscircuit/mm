@@ -85,7 +85,7 @@ jobs:
             -d "{
               \"event\": {
                 \"event_type\": \"versions_updated\",
-                \"repo\": \"tscircuit/circuit-json-to-kicad\",
+                \"repo\": \"tscircuit/mm\",
                 \"version\": \"$VERSION\",
                 \"package_json\": $PACKAGE_JSON
               }
